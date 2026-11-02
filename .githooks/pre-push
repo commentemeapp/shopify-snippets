@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Cobra el flujo dev -> qa -> main al hacer push.
+# Cobra el flujo dev -> main al hacer push (sin qa, decisión del usuario el 30/10/2026).
 #
-# Lo que protege: a qa llega solo lo que ya está en dev, y a main solo lo que ya pasó por
-# qa. La promoción es merge de la rama entera, nunca cherry-pick, y una rama publicada no
-# se reescribe. Lo que sube a qa o a main pasa antes por el gate.
+# Lo que protege: a main llega solo lo que ya está en dev. La promoción es merge de la rama
+# entera, nunca cherry-pick, y una rama publicada no se reescribe. Lo que sube a main pasa
+# antes por el gate.
 #
 # Emergencia: FORZAR_RAMAS=1 git push ...  (el CI cobra el flujo igual).
 set -uo pipefail
@@ -42,23 +42,22 @@ while read -r _ref_local sha_local ref_remoto sha_remoto; do
 
 	if [ "$sha_local" = "$VACIO" ]; then
 		case "$RAMA" in
-			dev | qa | main) rechazar "borrar la rama $RAMA no se hace por push." ;;
+			dev | main) rechazar "borrar la rama $RAMA no se hace por push." ;;
 		esac
 		continue
 	fi
 
 	case "$RAMA" in
-		dev | qa | main)
+		dev | main)
 			if [ "$sha_remoto" != "$VACIO" ] && ! git merge-base --is-ancestor "$sha_remoto" "$sha_local" 2>/dev/null; then
-				rechazar "esto reescribiría $RAMA. En dev, qa y main no se hace force push."
+				rechazar "esto reescribiría $RAMA. En dev y main no se hace force push."
 				continue
 			fi
 			;;
 	esac
 
 	case "$RAMA" in
-		qa) ANTERIOR=dev ;;
-		main) ANTERIOR=qa ;;
+		main) ANTERIOR=dev ;;
 		*) continue ;;
 	esac
 

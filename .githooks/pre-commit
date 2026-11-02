@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# qa y main no reciben commits propios: reciben el merge de la rama anterior.
+# main no recibe commits propios: recibe el merge de dev (flujo dev -> main, sin qa,
+# decisión del usuario el 30/10/2026).
 # El trabajo nace en una rama que sale de dev y llega a dev por pull request.
 #
 # Emergencia: FORZAR_RAMAS=1 git commit ...  (el CI cobra el flujo igual).
@@ -13,11 +14,11 @@ set -euo pipefail
 RAMA=$(git symbolic-ref --short HEAD 2>/dev/null || echo "")
 
 case "$RAMA" in
-	qa | main)
+	main)
 		printf '\033[31mCommit rechazado.\033[0m La rama %s no recibe commits directos.\n\n' "$RAMA"
 		printf 'El trabajo nace en una rama que sale de dev:\n'
 		printf '  git switch dev && git switch -c feat/lo-que-sea\n'
-		printf 'y llega a %s por merge de la rama anterior (ver .githooks/pre-push).\n' "$RAMA"
+		printf 'y llega a %s por merge de dev (ver .githooks/pre-push).\n' "$RAMA"
 		exit 1
 		;;
 esac
