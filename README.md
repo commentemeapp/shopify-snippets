@@ -6,9 +6,8 @@
 
 **Snippets de Liquid y validación del schema para temas de Shopify.**
 
-[![marketplace](https://img.shields.io/visual-studio-marketplace/v/commenteme.shopify-snippets?label=marketplace&labelColor=005278&color=FFBD38)](https://marketplace.visualstudio.com/items?itemName=commenteme.shopify-snippets)
-[![instalaciones](https://img.shields.io/visual-studio-marketplace/i/commenteme.shopify-snippets?label=instalaciones&labelColor=005278&color=FFBD38)](https://marketplace.visualstudio.com/items?itemName=commenteme.shopify-snippets)
-[![licencia](https://img.shields.io/github/license/zeluizr/shopify-snippets?label=licencia&labelColor=005278&color=FFBD38)](./LICENSE)
+[![versión](https://img.shields.io/github/package-json/v/commentemeapp/shopify-snippets/main?label=versi%C3%B3n&labelColor=005278&color=FFBD38)](https://marketplace.visualstudio.com/items?itemName=commenteme.shopify-snippets)
+[![licencia](https://img.shields.io/github/license/commentemeapp/shopify-snippets?label=licencia&labelColor=005278&color=FFBD38)](./LICENSE)
 
 ## Instalación
 
