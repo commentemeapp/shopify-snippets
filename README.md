@@ -46,7 +46,6 @@ tema Horizon real, sin falsos positivos.
 
 ## Documentación
 
-
 ### Tags y filtros de Liquid
 
 En cualquier `.liquid`, escribe el nombre de la tag (`if`, `for`, `paginate`, `form`, `render`, `content_for`...) o,
@@ -100,9 +99,6 @@ el enlace a shopify.dev.
 | `shopifySnippets.validarSchema` | `true` | Valida el `{% schema %}` de `sections/*.liquid` y `blocks/*.liquid` |
 
 No tiene comandos.
-
-No colorea la sintaxis de Liquid: registra el lenguaje `liquid` para los snippets y la validación, y convive con
-cualquier extensión que traiga la gramática, como la oficial de Shopify.
 
 No colorea la sintaxis de Liquid: registra el lenguaje `liquid` para los snippets y la validación, y convive con
 cualquier extensión que traiga la gramática, como la oficial de Shopify.
@@ -173,4 +169,4 @@ Conventional Commits, rama desde `dev` y PR contra `dev`; `npm run check` tiene 
 
 ---
 
-Hecho por [commente.me](https://commente.me) · hola@commente.me
+Hecho por [commente.me](https://www.commente.me) · hablecon@commente.me
