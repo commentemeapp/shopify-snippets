@@ -158,8 +158,8 @@ los tests validan también todas las sections y bloques de un tema real.
 **Lo generado nunca se edita a mano.** Los snippets salen de `data/` con `scripts/gerar.js`, y `npm run check` falla
 si lo commiteado no es exactamente lo que produce.
 
-**Ramas y publicación.** El trabajo sale de `dev` y llega por pull request; `dev → qa → main` por merge de la rama
-entera, y el commit de `main` lleva tag anotada de versión. `./scripts/instalar-hooks.sh` activa los hooks que
+**Ramas y publicación.** El trabajo sale de `dev` y llega por pull request; `dev → main` por merge de la rama
+entera (sin `qa` desde el 30/10/2026), y el commit de `main` lleva tag anotada de versión. `./scripts/instalar-hooks.sh` activa los hooks que
 cobran lo mismo en local. Una tag `v*` en `main` empaqueta el `.vsix` y lo adjunta a la Release de GitHub. La
 publicación en el Marketplace es manual, desde `main`, con `npx @vscode/vsce publish`: sube la versión en
 `package.json` y cierra el `CHANGELOG.md` antes, porque el Marketplace rechaza una versión repetida.

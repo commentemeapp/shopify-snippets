@@ -54,7 +54,8 @@ npm run preview                        # images/preview.png, a partir dos snippe
 
 ## Branches e versão
 
-`branch de trabalho` → PR contra `dev` → `qa` → `main`, sempre por merge da branch inteira. O workflow `ramas`
-cobra que `qa` só tenha o que está em `dev` e que o commit de `main` tenha **tag anotada de versão**: antes de
+`branch de trabalho` → PR contra `dev` → `main`, sempre por merge da branch inteira (sem `qa`, decisão do usuário
+em 30/10/2026). O workflow `ramas` cobra que `main` só tenha o que está em `dev` e que o commit de `main` tenha
+**tag anotada de versão**: antes de
 promover para `main`, suba a versão no `package.json` e feche a seção do CHANGELOG por PR em `dev`. Uma tag `v*`
 dispara o `publish.yml`, que só anexa o `.vsix` à Release; o Marketplace é manual (`vsce publish`).
