@@ -140,7 +140,7 @@ JavaScript puro, sin TypeScript y sin build: el `main` es `extension.js`, tipado
 tabs, con punto y coma y con comillas dobles. Dependencias de runtime: `ajv` y `jsonc-parser`.
 
 ```bash
-git clone https://github.com/zeluizr/shopify-snippets.git
+git clone https://github.com/commentemeapp/shopify-snippets.git
 cd shopify-snippets
 npm install
 

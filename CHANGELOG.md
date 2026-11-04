@@ -5,6 +5,13 @@ las versiones siguen [SemVer](https://semver.org/lang/es/).
 
 ## [Sin publicar]
 
+## [0.2.2] - 2026-11-03
+
+### Cambiado
+
+- Los badges del README dejan los de visual-studio-marketplace, que shields.io retiró: la versión sale del package.json y el de instalaciones sale.
+- El repositorio pasa a github.com/commentemeapp: package.json, README y enlaces de la página del Marketplace.
+
 ## [0.2.1] - 2026-10-26
 
 ### Cambiado
