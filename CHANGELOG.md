@@ -5,6 +5,12 @@ las versiones siguen [SemVer](https://semver.org/lang/es/).
 
 ## [Sin publicar]
 
+## [0.2.3] - 2026-11-04
+
+### Cambiado
+
+- README y header en el patrón de la marca commente.me Atacama: banner nuevo y firma con hablecon@commente.me.
+
 ## [0.2.2] - 2026-11-03
 
 ### Cambiado
