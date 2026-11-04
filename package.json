@@ -2,7 +2,7 @@
 	"name": "shopify-snippets",
 	"displayName": "Snippets for Shopify",
 	"description": "Snippets de Liquid y validación del {% schema %} para temas de Shopify, generados desde la documentación oficial.",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"publisher": "commenteme",
 	"icon": "images/icon.png",
 	"galleryBanner": {
@@ -12,11 +12,11 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/zeluizr/shopify-snippets.git"
+		"url": "https://github.com/commentemeapp/shopify-snippets.git"
 	},
-	"homepage": "https://github.com/zeluizr/shopify-snippets#readme",
+	"homepage": "https://github.com/commentemeapp/shopify-snippets#readme",
 	"bugs": {
-		"url": "https://github.com/zeluizr/shopify-snippets/issues"
+		"url": "https://github.com/commentemeapp/shopify-snippets/issues"
 	},
 	"engines": {
 		"vscode": "^1.60.0"
