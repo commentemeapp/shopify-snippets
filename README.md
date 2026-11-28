@@ -4,22 +4,18 @@
 
 **Snippets de Liquid y validación del schema para temas de Shopify.**
 
-[![versión](https://badgen.net/vs-marketplace/v/commenteme.shopify-snippets?color=005278)](https://marketplace.visualstudio.com/items?itemName=commenteme.shopify-snippets)
-[![instalaciones](https://badgen.net/vs-marketplace/i/commenteme.shopify-snippets)](https://marketplace.visualstudio.com/items?itemName=commenteme.shopify-snippets)
-[![licencia](https://badgen.net/github/license/commentemeapp/shopify-snippets)](./LICENSE)
+Versión 0.2.3 · en desarrollo. Cambios en [CHANGELOG.md](CHANGELOG.md).
 
 ## Instalación
 
-En Quick Open de VS Code (`Cmd/Ctrl + P`):
-
-```
-ext install commenteme.shopify-snippets
+```bash
+code --install-extension commenteme.shopify-snippets
 ```
 
-Desde el terminal, `code --install-extension commenteme.shopify-snippets`. En el Marketplace aparece como
-**«Snippets for Shopify»**. Requiere VS Code `>= 1.60.0`.
+O en Quick Open de VS Code (`Cmd/Ctrl + P`): `ext install commenteme.shopify-snippets`. En el Marketplace aparece como
+**«Snippets for Shopify»**.
 
-## Uso rápido
+## Uso
 
 En un `sections/*.liquid` de tu tema, escribe `section-file` y Tab: entra la section completa con su
 `{% schema %}`. Dentro del schema, `setting-range` inserta un setting válido, y cualquier error queda subrayado
@@ -27,14 +23,14 @@ mientras escribes.
 
 ![Snippets de settings y validación del {% schema %} en una section de Horizon](images/preview.png)
 
-## Que incluye
+### Que incluye
 
 - **Tags y filtros de Liquid** como snippets, con el resumen oficial y el enlace a shopify.dev.
 - **Sections, bloques y snippets** con su `{% schema %}`, presets y `{% doc %}`, como en Online Store 2.0 y Horizon.
 - **Un snippet por cada tipo de setting** del editor de temas: los 35 tipos del esquema oficial.
 - **Validación del `{% schema %}`** de `sections/` y `blocks/` contra el esquema oficial, con mensajes en español.
 
-## Por que existe
+### Por que existe
 
 Todo lo que sugiere sale de los datos oficiales de Shopify
 ([Shopify/theme-liquid-docs](https://github.com/Shopify/theme-liquid-docs)), fijados en un commit en
@@ -42,8 +38,6 @@ Todo lo que sugiere sale de los datos oficiales de Shopify
 hasta que el snippet exista; los descontinuados (`include` y los filtros `deprecated`) no se sugieren; cada ejemplo de
 setting pasa la validación del propio esquema, y la validación se prueba contra todas las sections y bloques de un
 tema Horizon real, sin falsos positivos.
-
-## Documentación
 
 ### Tags y filtros de Liquid
 
@@ -113,23 +107,12 @@ Shopify.
 **`Ctrl + Espacio` no abre las sugerencias (macOS).** macOS usa ese atajo para cambiar la fuente de entrada. Usa
 `Cmd + I`, o libéralo en **Ajustes del Sistema → Teclado → Atajos de teclado → Fuentes de entrada**.
 
-### Estructura
+## Requisitos
 
-```
-.
-├── extension.js                  # activate()/deactivate(), snippets y validación
-├── language-configuration.json   # comentarios y pares del lenguaje liquid
-├── lib/                          # lógica pura, sin la API vscode (testeable con node:test)
-├── data/                         # tags, filtros y objetos de Shopify, y el commit de origen (fonte.json)
-├── schemas/                      # esquema oficial del {% schema %}
-├── snippets/                     # .code-snippets (generado desde data/)
-├── images/                       # ícono (PNG y SVG) e imagen del README
-├── assets/                       # header del README
-├── scripts/                      # sincronizar los datos, generar snippets, ícono, imagen y hooks
-└── test/                         # node:test
-```
+- VS Code `>= 1.60.0`.
+- Para colorear el Liquid, una extensión que traiga la gramática, como la oficial de Shopify.
 
-### Desarrollo
+## Desarrollo
 
 JavaScript puro, sin TypeScript y sin build: el `main` es `extension.js`, tipado con JSDoc y `// @ts-check`. CommonJS,
 tabs, con punto y coma y con comillas dobles. Dependencias de runtime: `ajv` y `jsonc-parser`.
@@ -161,9 +144,30 @@ publicación en el Marketplace es manual, desde `main`, con `npx @vscode/vsce pu
 
 Conventional Commits; el mensaje describe el efecto, no el cambio.
 
-## Contribuir · Licencia
+**Contribuir.** Conventional Commits, rama desde `dev` y PR contra `dev`; `npm run check` tiene que pasar.
 
-Conventional Commits, rama desde `dev` y PR contra `dev`; `npm run check` tiene que pasar.
+## Estructura
+
+```
+.
+├── extension.js                  # activate()/deactivate(), snippets y validación
+├── language-configuration.json   # comentarios y pares del lenguaje liquid
+├── lib/                          # lógica pura, sin la API vscode (testeable con node:test)
+├── data/                         # tags, filtros y objetos de Shopify, y el commit de origen (fonte.json)
+├── schemas/                      # esquema oficial del {% schema %}
+├── snippets/                     # .code-snippets (generado desde data/)
+├── images/                       # ícono (PNG y SVG) e imagen del README
+├── assets/                       # banner antiguo, lo leen las versiones ya publicadas
+├── scripts/                      # sincronizar los datos, generar snippets, ícono, imagen y hooks
+└── test/                         # node:test
+```
+
+## Licencia
+
 [MIT](./LICENSE). Los datos y esquemas de `data/` y `schemas/` son de Shopify, también MIT: mira [NOTICE](NOTICE).
+
+Contacto: hablecon@commente.me
+
+---
 
 _Hecho con amor y café por [zeluizr](https://github.com/zeluizr) y con la ayuda de [Claude](https://claude.ai/referral/Cz_UimA0NQ) ☕_
